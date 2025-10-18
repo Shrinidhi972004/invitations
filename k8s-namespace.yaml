@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: pooja-invitation
+  labels:
+    name: pooja-invitation
+    purpose: event-invitation

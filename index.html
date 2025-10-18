@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pooja Invitation — 26 Oct</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1>Pooja Invitation</h1>
+      <p class="date">Sunday, 26 October</p>
+    </div>
+
+    <div class="content">
+      <p class="greeting">You are warmly invited to join us for a Pooja at our home.</p>
+
+      <div class="details">
+        <p><strong>Host:</strong> Shrinivas Upadhyaya</p>
+        <p><strong>Time:</strong> 11:30 AM</p>
+      </div>
+
+      <div class="location">
+        <h3>Location</h3>
+        <p id="address">Amrutha nagara 1st Block 2nd Cross "Om Sri Jalajanabha", Vamanjoor checkpost, pin code: 575028</p>
+
+        <!-- Replace the coordinates below with your own lat,lng or leave blank to use address-only links -->
+        <script>
+          // Your location in Mangaluru, Karnataka
+          const LAT = 12.9237;
+          const LNG = 74.9089;
+          const ADDRESS = 'WWF5+FHP Vamanjoor, Mangaluru, Karnataka';
+          const addressEl = document.getElementById('address');
+          if (ADDRESS) addressEl.textContent = ADDRESS;
+
+          const mapsOpenUrl = ADDRESS
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`
+            : `https://www.google.com/maps/search/?api=1&query=${LAT},${LNG}`;
+
+          const mapsNavigateUrl = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
+
+          // Insert buttons
+          const btnContainer = document.createElement('div');
+          btnContainer.className = 'buttons';
+          const openBtn = document.createElement('a');
+          openBtn.href = mapsOpenUrl;
+          openBtn.target = '_blank';
+          openBtn.rel = 'noopener';
+          openBtn.className = 'btn';
+          openBtn.textContent = 'Open in Google Maps';
+
+          const navBtn = document.createElement('a');
+          navBtn.href = mapsNavigateUrl;
+          navBtn.target = '_blank';
+          navBtn.rel = 'noopener';
+          navBtn.className = 'btn primary';
+          navBtn.textContent = 'Navigate (Directions)';
+
+          btnContainer.appendChild(openBtn);
+          btnContainer.appendChild(navBtn);
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.location').appendChild(btnContainer);
+          });
+        </script>
+
+      </div>
+
+      <p class="rsvp">Shrinivas Upadhyaya (Seenu): <a href="tel:+919845731642">+91 9845731642</a></p>
+      <p class="rsvp">Gayathri P:<a href="tel:+919108243350">+91 9108243350</a></p>
+      <p class="rsvp">Shrinidhi Upadhyaya: <a href="tel:+917204200386">+91 7202400386</a></p>
+    </div>
+
+    <footer>
+      <p>We look forward to your presence.</p>
+    </footer>
+  </div>
+</body>
+</html>
